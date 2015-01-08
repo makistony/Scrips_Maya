@@ -1,0 +1,10 @@
+string $window = `window -title "PALM3D" "test447"`;string $form = `formLayout -numberOfDivisions 100`;global proc myMergeVertex(){float $distance = `floatField -q -value 
+"distanceValue"`;polyMergeVertex -d $distance -ch 0;}string$object = `text -label "Bessghaier Raouf // PALM3D" -w 153 -h 20`;formLayout -edit -attachForm $object "top" 234 -attachForm 
+$object "left" 23 $form;string $object = `button -label "Merge" -w 165 -h 45`;formLayout -edit -attachForm $object "top" 174 -attachForm $object "left" 16 $form;string $object = `button -
+command "myMergeVertex();" -backgroundColor 1 1 1 -label "Merge All Selected Vertex" -w 168 -h 47`;formLayout -edit -attachForm $object "top" 21 -attachForm $object "left" 15 $form;string 
+$object = `separator -w 121 -h 4`;formLayout -edit -attachForm $object "top" 228 -attachForm $object "left" 39 $form;string $object = `button -command "polyPerformAction polyUnite o 0;" -
+label "Combine Object" -w 166 -h 46`;formLayout -edit -attachForm $object "top" 118 -attachForm $object "left" 16 $form;string $object = `text -label "Distance" -w 64 -h 26`;formLayout -
+edit -attachForm $object "top" 75 -attachForm $object "left" 15 $form;string $object = `floatField -minValue -2 -maxValue 2 -enterCommand true -precision 4 -step .01 -step 0.125 -w 50 -h 30 
+"distanceValue"`;formLayout -edit -attachForm $object "top" 75 -attachForm $object "left" 75 $form;string $object = `text -label "Min: -2" -w 64 -h 26`;formLayout -edit -attachForm $object 
+"top" 70 -attachForm $object "left" 115 $form;string $object = `text -label "Max: 2" -w 64 -h 26`;formLayout -edit -attachForm $object "top" 85 -attachForm $object "left" 115 
+$form;setParent..;showWindow( $window );window -edit -widthHeight 200.0 260.0 "PALM3D";
